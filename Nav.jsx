@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { IoFastFood } from "react-icons/io5";
-import { FaSearch, FaShoppingBag } from "react-icons/fa";
+import { FaSearch, FaShoppingBag, FaUtensils } from "react-icons/fa"; // 🍴 logo icon
 
 function Nav({ onSearch, cartCount = 0, cartItems = [], setCartItems }) {
   const [openCart, setOpenCart] = useState(false);
@@ -60,9 +59,15 @@ function Nav({ onSearch, cartCount = 0, cartItems = [], setCartItems }) {
 
   return (
     <div className="w-full h-[100px] flex justify-between items-center px-5 md:px-8 relative">
-      {/* Logo */}
-      <div className="w-[60px] h-[60px] bg-white flex justify-center items-center rounded-md shadow-xl">
-        <IoFastFood className="w-[50px] h-[30px] text-green-500" />
+      {/* Logo + Name (Left Side) */}
+      <div className="flex items-center gap-3">
+        <FaUtensils className="text-green-500 text-4xl animate-pulse" />
+        <a
+          href="/"
+          className="text-3xl md:text-4xl font-extrabold text-green-500 tracking-wide"
+        >
+          FoodiHub
+        </a>
       </div>
 
       {/* Search */}
